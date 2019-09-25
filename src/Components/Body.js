@@ -25,7 +25,7 @@ export default class Body extends Component {
         this.setState({
             percent: parseFloat((this.state.timer * 5)/100).toFixed(2),
             style: {
-                color: `rgba(${this.props.dark ? () => this.hexToRGB("313131") : () => this.hexToRGB("F1F3FB")}, ${this.state.percent})`
+                color: `rgba(${this.props.dark ? () => this.hexToRGB("F1F3FB") : () => this.hexToRGB("313131")}, ${this.state.percent})`
             }
         })
     }
@@ -86,6 +86,7 @@ export default class Body extends Component {
 
     render = () => {
         const { dark } = this.props;
+        const { style } = this.state;
         return (
             <div className={`body${dark ? '__dark' : ''}`}>
                 <textarea 
@@ -94,7 +95,7 @@ export default class Body extends Component {
                     id="textarea"
                     value={this.state.message}
                     onChange={(e) => this.onChange(e)} 
-                    style={this.state.style}
+                    style={style}
                     spellCheck={false}
                 />
             </div>

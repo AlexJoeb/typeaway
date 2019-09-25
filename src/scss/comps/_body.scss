@@ -9,8 +9,11 @@
         &__dark{
             @extend %basic_textarea;
             background: $black;
+            color:$white;
         }
+
         @extend %basic_textarea;
+        color:$black;
         background: $white;
     }
 }
