@@ -19,7 +19,6 @@ export default class App extends Component {
         dark: !prevState.dark,
       }
     });
-    console.log(this.state.dark);
   }
 
   render = () => {
