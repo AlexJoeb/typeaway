@@ -1,0 +1,16 @@
+.body{
+    &__dark{
+        @extend %basic_body;
+    }
+    @extend %basic_body;
+
+    &__textarea {
+        background: red;
+        &__dark{
+            @extend %basic_textarea;
+            background: $black;
+        }
+        @extend %basic_textarea;
+        background: $white;
+    }
+}

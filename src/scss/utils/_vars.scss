@@ -1,0 +1,53 @@
+// ==================================================
+// = Font Settings ==================================
+// ==================================================
+
+  // = Base Font Size ===============================
+  $base__font-size: 18px;
+
+  // = Font Families ================================
+  @import "fonts";
+  $font__family--primary: "Roboto", "Helvetica Neue", Helvetica, sans-serif;
+  $font__family--secondary: "Cute Font", "Helvetica Neue", Helvetica, sans-serif;
+
+// ==================================================
+// = Color Settings =================================
+// ==================================================
+
+  // = Color Palette Function =======================
+  @function palette($color, $shade: 'base'){
+    @if $shade == "base"{
+      @return $color;
+    }
+    @else if $shade == "light"{
+      @return lighten($color, 10%);
+    }
+    @else if $shade == "x-light"{
+      @return lighten($color, 20%);
+    }
+    @else if $shade == "xx-light"{
+      @return lighten($color, 30%);
+    }
+    @else if $shade == "dark"{
+      @return darken($color, 10%);
+    }
+    @else if $shade == "x-dark"{
+      @return darken($color, 20%);
+    }
+    @else if $shade == "xx-dark"{
+      @return darken($color, 30%);
+    }
+  }
+
+  // = Base Colors ==================================
+  $white: #F1F3FB;
+  $black: #313131;
+
+// ==================================================
+// = Break Points ===================================
+// ==================================================
+
+$break-points: (
+    sm: 320px,
+    med: 780px,
+);

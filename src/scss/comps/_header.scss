@@ -1,0 +1,40 @@
+.header {
+    &__dark{
+        background-color: $black;
+        @extend %basic_header;
+    }
+
+    background-color:$white;
+    @extend %basic_header;
+
+    &__logo{
+        &__dark{
+            svg{
+                @extend %basic_svg;
+                text{
+                    fill: $white;
+                }
+            }
+        }
+
+        svg{
+            @extend %basic_svg;
+            text {
+                fill: $black;
+            }
+        }
+    }
+
+    &__toggle{
+        &--btn{
+            &__dark{
+                @extend %basic_btn;
+                border: 1px solid $white;
+                color: $white;
+            }
+            @extend %basic_btn;
+            border: 1px solid $black;
+            color: $black;
+        }
+    }
+}

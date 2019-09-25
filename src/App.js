@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Header from './Components/Header';
+import Body from './Components/Body';
+
+export default class App extends Component {
+
+  constructor(props){
+    super(props);
+
+    this.state = {
+      dark: true,
+    }
+  }
+
+  toggleDark = () => {
+    this.setState((prevState) => {
+      return {
+        dark: !prevState.dark,
+      }
+    });
+    console.log(this.state.dark);
+  }
+
+  render = () => {
+    const { dark } = this.state;
+    return (
+      <div className="App">
+        <Header dark={dark} toggleDark={this.toggleDark} />
+        <Body dark={dark} />
+      </div>
+    );
+  }
 }
-
-export default App;

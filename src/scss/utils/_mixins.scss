@@ -1,0 +1,45 @@
+// ==================================================
+// = Display Mixins =================================
+// ==================================================
+@mixin flex($dir: row, $wrap: wrap) {
+    & {
+        display: flex;
+        flex-direction: $dir;
+        flex-wrap: $wrap;
+        @content;
+    }
+}
+
+// ==================================================
+// = BEM Mixins =====================================
+// ==================================================
+
+// Element Mixin
+@mixin e($element) {
+    &__#{$element} {
+        @content;
+    }
+}
+
+// Modifer Mixin
+@mixin m($modifier) {
+    &--#{$modifier} {
+        @content;
+    }
+}
+
+// ==================================================
+// = Media Query Mixin ==============================
+// ==================================================
+
+@mixin mq($break: "sm") {
+    @if map-has-key($map: $break-points, $key: $break) {
+        @media only screen and (min-width: map-get($map: $break-points, $key: $break)) {
+            @content;
+        }
+    }
+
+    @else {
+        @warn "Could not find break point: #{$break}.";
+    }
+}

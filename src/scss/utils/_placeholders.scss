@@ -1,0 +1,49 @@
+%basic_header{
+    padding: 10px;
+    height: 80px;
+    @include flex{
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+%basic_svg{
+    width: 10vw;
+    min-width: 120px;
+    max-width: 150px;
+}
+
+%basic_btn{
+    border:0;
+    background:none;
+    padding: 3px 5px;
+
+    &:active, &:focus {
+        outline: none;
+    }
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+%basic_body{
+    width: 100vw;
+    height: calc(100vh - 80px);
+}
+
+%basic_textarea{
+    width: 100vw;
+    height: calc(100vh - 80px);
+    padding: 20px;
+
+    font-size: $base__font-size;
+
+    border:0;
+
+    resize: none;
+
+    &:focus, &:active {
+        outline: none;
+    }
+}
